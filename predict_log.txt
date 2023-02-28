@@ -1,0 +1,26 @@
+(udacity)
+coold@TooOPLive-PC MINGW64 /e/python/Project2/aipnd-project (master)
+$ python predict.py
+usage: Predict Flower [-h] [-k TOP_K] [-cat CATEGORY] [--gpu] IMG_PATH CHKPOINT_PATH
+
+Predicts the classification of flowers
+
+positional arguments:
+  IMG_PATH                                  Path to the flower image
+  CHKPOINT_PATH                             Path to checkpoint.
+
+optional arguments:
+  -h, --help                                show this help message and exit
+  -k TOP_K, --top_k TOP_K                   Number of training epochs. Default = 3
+  -cat CATEGORY, --category_names CATEGORY  Select category mapping to real names. Default = cat_to_name.json
+  --gpu                                     Use GPU (CUDA) for inference
+
+(udacity)
+coold@TooOPLive-PC MINGW64 /e/python/Project2/aipnd-project (master)
+$ python predict.py ./flower_data/test/64/image_06134.jpg ./checkpoint/checkpoint.pth --top_k 5 --gpu
+          Silverbush with a probability of 0.9987892508506775
+             Petunia with a probability of 0.0007934579043649137
+     Mexican Petunia with a probability of 0.00031145106186158955
+          Windflower with a probability of 3.405025563552044e-05
+   Californian Poppy with a probability of 2.226599281129893e-05
+Prediction complete

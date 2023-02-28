@@ -1,0 +1,134 @@
+(udacity)
+coold@TooOPLive-PC MINGW64 /e/python/Project2/aipnd-project (master)
+$ python train.py
+usage: Train Network [-h] [-sd CP_PATH] [-a ARCH] [-lr RATE] [-hu UNITS] [-e EPOCHS] [--gpu] DIR_PATH
+
+Trains a neural network model
+
+positional arguments:
+  DIR_PATH                         Path of data directory
+
+optional arguments:
+  -h, --help                       show this help message and exit
+  -sd CP_PATH, --save_dir CP_PATH  Path of checkpoint.pth
+  -a ARCH, --arch ARCH             Select pre-trained model architecture. Default = vgg16
+  -lr RATE, --learning_rate RATE   Set learning rate hyperparameter. Default = 0.001
+  -hu UNITS, --hidden_units UNITS  Number of hidden units. Default = 2048
+  -e EPOCHS, --epochs EPOCHS       Number of training epochs. Default = 3
+  --gpu                            Use GPU (CUDA) for training
+
+(udacity)
+coold@TooOPLive-PC MINGW64 /e/python/Project2/aipnd-project (master)
+$ python train.py ./flower_data --save_dir ./checkpoint/checkpoint.pth --gpu
+VGG(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU(inplace=True)
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (6): ReLU(inplace=True)
+    (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): ReLU(inplace=True)
+    (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (10): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (13): ReLU(inplace=True)
+    (14): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): ReLU(inplace=True)
+    (16): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (17): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): ReLU(inplace=True)
+    (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (20): ReLU(inplace=True)
+    (21): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): ReLU(inplace=True)
+    (26): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (27): ReLU(inplace=True)
+    (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (29): ReLU(inplace=True)
+    (30): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(7, 7))
+  (classifier): Sequential(
+    (fc1): Linear(in_features=25088, out_features=2048, bias=True)
+    (relu): ReLU()
+    (fc2): Linear(in_features=2048, out_features=256, bias=True)
+    (fc3): Linear(in_features=256, out_features=102, bias=True)
+    (output): LogSoftmax(dim=1)
+  )
+)
+Training is now starting
+Architecture:   vgg16
+Hidden Units:   2048
+Epochs:         3
+Learning Rate:  0.001
+GPU Enabled:    True
+Epoch 1/3.. Loss: 5.925.. Validation loss: 5.053.. Accuracy: 0.100
+Epoch 1/3.. Loss: 4.722.. Validation loss: 3.907.. Accuracy: 0.147
+Epoch 1/3.. Loss: 3.736.. Validation loss: 3.411.. Accuracy: 0.240
+Epoch 1/3.. Loss: 3.288.. Validation loss: 2.858.. Accuracy: 0.348
+Epoch 1/3.. Loss: 3.076.. Validation loss: 2.461.. Accuracy: 0.410
+Epoch 1/3.. Loss: 2.761.. Validation loss: 2.019.. Accuracy: 0.520
+Epoch 1/3.. Loss: 2.468.. Validation loss: 1.778.. Accuracy: 0.543
+Epoch 1/3.. Loss: 2.213.. Validation loss: 1.662.. Accuracy: 0.571
+Epoch 1/3.. Loss: 2.160.. Validation loss: 1.424.. Accuracy: 0.596
+Epoch 1/3.. Loss: 1.842.. Validation loss: 1.278.. Accuracy: 0.681
+Epoch 1/3.. Loss: 1.836.. Validation loss: 1.131.. Accuracy: 0.692
+Epoch 1/3.. Loss: 1.673.. Validation loss: 1.244.. Accuracy: 0.635
+Epoch 1/3.. Loss: 1.543.. Validation loss: 1.078.. Accuracy: 0.702
+Epoch 1/3.. Loss: 1.505.. Validation loss: 1.125.. Accuracy: 0.690
+Epoch 1/3.. Loss: 1.426.. Validation loss: 1.080.. Accuracy: 0.690
+Epoch 1/3.. Loss: 1.492.. Validation loss: 0.921.. Accuracy: 0.738
+Epoch 1/3.. Loss: 1.521.. Validation loss: 0.906.. Accuracy: 0.730
+Epoch 1/3.. Loss: 1.453.. Validation loss: 0.901.. Accuracy: 0.756
+Epoch 1/3.. Loss: 1.360.. Validation loss: 0.797.. Accuracy: 0.775
+Epoch 1/3.. Loss: 1.294.. Validation loss: 0.847.. Accuracy: 0.766
+Epoch 2/3.. Loss: 0.450.. Validation loss: 0.871.. Accuracy: 0.733
+Epoch 2/3.. Loss: 1.085.. Validation loss: 0.829.. Accuracy: 0.778
+Epoch 2/3.. Loss: 1.237.. Validation loss: 0.921.. Accuracy: 0.749
+Epoch 2/3.. Loss: 1.149.. Validation loss: 0.805.. Accuracy: 0.782
+Epoch 2/3.. Loss: 0.987.. Validation loss: 0.840.. Accuracy: 0.761
+Epoch 2/3.. Loss: 1.141.. Validation loss: 0.821.. Accuracy: 0.792
+Epoch 2/3.. Loss: 1.070.. Validation loss: 0.693.. Accuracy: 0.815
+Epoch 2/3.. Loss: 0.879.. Validation loss: 0.774.. Accuracy: 0.793
+Epoch 2/3.. Loss: 1.138.. Validation loss: 0.684.. Accuracy: 0.816
+Epoch 2/3.. Loss: 0.918.. Validation loss: 0.681.. Accuracy: 0.833
+Epoch 2/3.. Loss: 1.093.. Validation loss: 0.652.. Accuracy: 0.838
+Epoch 2/3.. Loss: 1.042.. Validation loss: 0.629.. Accuracy: 0.821
+Epoch 2/3.. Loss: 1.024.. Validation loss: 0.688.. Accuracy: 0.823
+Epoch 2/3.. Loss: 1.084.. Validation loss: 0.660.. Accuracy: 0.829
+Epoch 2/3.. Loss: 0.981.. Validation loss: 0.735.. Accuracy: 0.798
+Epoch 2/3.. Loss: 0.953.. Validation loss: 0.668.. Accuracy: 0.819
+Epoch 2/3.. Loss: 0.947.. Validation loss: 0.703.. Accuracy: 0.820
+Epoch 2/3.. Loss: 0.941.. Validation loss: 0.674.. Accuracy: 0.816
+Epoch 2/3.. Loss: 1.058.. Validation loss: 0.680.. Accuracy: 0.813
+Epoch 2/3.. Loss: 0.985.. Validation loss: 0.647.. Accuracy: 0.834
+Epoch 2/3.. Loss: 1.082.. Validation loss: 0.683.. Accuracy: 0.820
+Epoch 3/3.. Loss: 0.725.. Validation loss: 0.723.. Accuracy: 0.817
+Epoch 3/3.. Loss: 0.870.. Validation loss: 0.624.. Accuracy: 0.829
+Epoch 3/3.. Loss: 1.003.. Validation loss: 0.660.. Accuracy: 0.827
+Epoch 3/3.. Loss: 0.746.. Validation loss: 0.713.. Accuracy: 0.820
+Epoch 3/3.. Loss: 0.794.. Validation loss: 0.735.. Accuracy: 0.807
+Epoch 3/3.. Loss: 0.938.. Validation loss: 0.676.. Accuracy: 0.835
+Epoch 3/3.. Loss: 1.014.. Validation loss: 0.608.. Accuracy: 0.841
+Epoch 3/3.. Loss: 0.833.. Validation loss: 0.685.. Accuracy: 0.812
+Epoch 3/3.. Loss: 0.868.. Validation loss: 0.649.. Accuracy: 0.822
+Epoch 3/3.. Loss: 0.942.. Validation loss: 0.648.. Accuracy: 0.836
+Epoch 3/3.. Loss: 0.906.. Validation loss: 0.601.. Accuracy: 0.857
+Epoch 3/3.. Loss: 0.951.. Validation loss: 0.510.. Accuracy: 0.865
+Epoch 3/3.. Loss: 0.792.. Validation loss: 0.599.. Accuracy: 0.836
+Epoch 3/3.. Loss: 0.904.. Validation loss: 0.591.. Accuracy: 0.843
+Epoch 3/3.. Loss: 0.926.. Validation loss: 0.556.. Accuracy: 0.855
+Epoch 3/3.. Loss: 0.788.. Validation loss: 0.637.. Accuracy: 0.840
+Epoch 3/3.. Loss: 0.754.. Validation loss: 0.547.. Accuracy: 0.876
+Epoch 3/3.. Loss: 0.892.. Validation loss: 0.579.. Accuracy: 0.847
+Epoch 3/3.. Loss: 0.942.. Validation loss: 0.558.. Accuracy: 0.852
+Epoch 3/3.. Loss: 0.793.. Validation loss: 0.599.. Accuracy: 0.836
+Training completed
+Saved checkpoint
